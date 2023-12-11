@@ -1,9 +1,10 @@
 # github.com/colour-me-bibi/elvish-extras/wl-clipboard.elv
 
-fn i {
-    wl-copy
-}
+use epm
+epm:install &silent-if-installed ^
+  github.com/zzamboni/elvish-modules/alias
 
-fn o {
-    wl-paste
-}
+use github.com/zzamboni/elvish-modules/alias
+
+alias:new clp wl-copy
+alias:new pst wl-paste
